@@ -1,0 +1,20 @@
+name: 功能需求
+description: 为 TeamTodo 提交一个功能需求
+title: "[Feature] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 想实现什么？
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收条件
+      placeholder: |
+        - 条件 1
+        - 条件 2
+    validations:
+      required: true
