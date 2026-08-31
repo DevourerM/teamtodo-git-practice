@@ -83,7 +83,7 @@ def print_tasks(todo: TodoList) -> None:
 
     for i, task in enumerate(todo.tasks, start=1):
         marker = "x" if task.done else " "
-        print(f"{i}. [{marker}] {task.title} {task.priority}")
+        print(f"{i}. [{marker}] [{task.priority.upper()}] {task.title}")
 
 
 def ask_index(prompt: str) -> int:
