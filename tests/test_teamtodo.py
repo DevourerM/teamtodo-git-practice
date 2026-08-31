@@ -8,15 +8,16 @@ from teamtodo import Task, TodoList, load_tasks, save_tasks
 class TodoListTests(unittest.TestCase):
     def test_add_task(self):
         todo = TodoList()
-        task = todo.add("学习 git status")
+        task = todo.add("学习 git status" , "easy")
         self.assertEqual(task.title, "学习 git status")
+        self.assertEqual(task.priority, "easy")
         self.assertFalse(task.done)
         self.assertEqual(len(todo.tasks), 1)
 
     def test_add_empty_title_fails(self):
         todo = TodoList()
         with self.assertRaises(ValueError):
-            todo.add("   ")
+            todo.add("   " , 'easy')
 
     def test_complete_task(self):
         todo = TodoList([Task("提交 PR")])

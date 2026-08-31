@@ -16,17 +16,20 @@ from typing import Iterable
 class Task:
     title: str
     done: bool = False
+    priority:str = 'normal'    #优先级
 
 
 class TodoList:
     def __init__(self, tasks: Iterable[Task] | None = None) -> None:
         self.tasks = list(tasks or [])
 
-    def add(self, title: str) -> Task:
+    def add(self, title: str , priority:str) -> Task:
         title = title.strip()
         if not title:
             raise ValueError("任务标题不能为空")
-        task = Task(title=title)
+        if not priority in ['normal' , 'hard' , 'easy']:
+            raise ValueError("难度输入有误")
+        task = Task(title=title , priority=priority)
         self.tasks.append(task)
         return task
 
@@ -80,7 +83,7 @@ def print_tasks(todo: TodoList) -> None:
 
     for i, task in enumerate(todo.tasks, start=1):
         marker = "x" if task.done else " "
-        print(f"{i}. [{marker}] {task.title}")
+        print(f"{i}. [{marker}] {task.title} {task.priority}")
 
 
 def ask_index(prompt: str) -> int:
@@ -109,7 +112,8 @@ def main() -> None:
                 print_tasks(todo)
             elif choice == "2":
                 title = input("任务标题：")
-                todo.add(title)
+                priority = input("任务难度：")
+                todo.add(title ,priority)
                 save_tasks(todo, data_file)
                 print("已添加任务。")
             elif choice == "3":
