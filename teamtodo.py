@@ -97,7 +97,7 @@ def main() -> None:
 
     while True:
         print(
-            "\n=== TeamTodo Practice ===\n"
+            "\n=== TeamTodo CLI ===\n"
             "1. 查看任务\n"
             "2. 新建任务\n"
             "3. 完成任务\n"
