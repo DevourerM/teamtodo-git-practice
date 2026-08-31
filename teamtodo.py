@@ -1,4 +1,4 @@
-"""TeamTodo - Git/GitHub 多人协作课程的起始项目。
+﻿"""TeamTodo - Git/GitHub 多人协作课程的起始项目。
 
 重要：main 分支故意只提供基础功能。
 Issue #1、#2、#6 会要求你逐步扩展它。
@@ -97,7 +97,7 @@ def main() -> None:
 
     while True:
         print(
-            "\n=== TeamTodo ===\n"
+            "\n=== TeamTodo Practice ===\n"
             "1. 查看任务\n"
             "2. 新建任务\n"
             "3. 完成任务\n"
@@ -139,3 +139,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
