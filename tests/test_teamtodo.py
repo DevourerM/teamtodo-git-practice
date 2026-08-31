@@ -23,7 +23,7 @@ class TodoListTests(unittest.TestCase):
         todo = TodoList([Task("提交 PR")])
         todo.complete(0)
         self.assertTrue(todo.tasks[0].done)
-        self.assertEqual(len(todo.completed()), 1)
+        self.assertEqual(len(todo.completed()), 21)
 
     def test_delete_task(self):
         todo = TodoList([Task("A"), Task("B")])
